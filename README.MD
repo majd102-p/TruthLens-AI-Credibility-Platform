@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green.svg)
 ![FastAPI](https://img.shields.io/badge/Framework-FastAPI-009688.svg)
 ![Docker](https://img.shields.io/badge/Container-Docker-2496ED.svg)
+[![LinkedIn Article](https://img.shields.io/badge/LinkedIn-Read%20Article-blue?logo=linkedin)](https://www.linkedin.com/pulse/truthlens-ai-assisted-credibility-assessment-platform-majd-ayoub-psowf)
 
 ## 🌟 Overview
 **TruthLens** is a high-performance, decision-support system engineered to combat the spread of misinformation. Unlike traditional fact-checking tools, TruthLens leverages a **Hybrid Intelligence Architecture** that combines Local Large Language Models (LLMs), classical machine learning, and Open-Source Intelligence (OSINT) streams to provide real-time credibility scores.
