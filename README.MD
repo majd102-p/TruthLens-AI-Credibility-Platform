@@ -67,3 +67,7 @@ Developed by **Majd Majdi Ayoub** – Computer Engineer & AI Enthusiast.
 * **Portfolio:** Available upon request.
 
 ---
+
+### 🤝 Commercial Inquiries & Collaboration
+While this project is licensed under **GPLv3**, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding formal agreements, custom implementations, or use cases beyond the scope of the current license, please contact me directly via [LinkedIn](https://www.linkedin.com/in/majd--ayoub/) to discuss official contracts.
+---
