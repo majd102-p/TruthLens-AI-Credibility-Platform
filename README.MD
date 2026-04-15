@@ -61,12 +61,21 @@ You can find the comprehensive **78-page engineering report** in this repository
 
 ---
 
+
 ## 📫 Contact & Professional Network
 Developed by **Majd Majdi Ayoub** – Computer Engineer & AI Enthusiast.
 
 * **LinkedIn:** [linkedin.com/in/majd--ayoub/](https://www.linkedin.com/in/majd--ayoub/)
 * **Portfolio:** Available upon request.
 
+---
+
+## 📝 Featured Article
+I have published a detailed article on LinkedIn Pulse that discusses the vision, challenges, and high-level strategy behind TruthLens. 
+
+👉 **[Read the Full Article on LinkedIn](https://www.linkedin.com/pulse/truthlens-ai-assisted-credibility-assessment-platform-majd-ayoub-psowf)**
+
+---
 ---
 
 ### 🤝 Commercial Inquiries & Collaboration
