@@ -76,6 +76,7 @@ I have published a detailed article on LinkedIn Pulse that discusses the vision,
 👉 **[Read the Full Article on LinkedIn](https://www.linkedin.com/pulse/truthlens-ai-assisted-credibility-assessment-platform-majd-ayoub-psowf)**
 
 ---
+*Note: The source code is currently kept in a private repository for intellectual property protection. The full technical architecture, system design, and implementation methodology are detailed in the provided PDF report.*
 ---
 
 ### 🤝 Commercial Inquiries & Collaboration
