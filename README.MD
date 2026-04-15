@@ -12,7 +12,7 @@
 ---
 
 ## 📚 Official Publication & Citation
-The comprehensive 78-page technical architecture and research report for TruthLens is officially published and archived on **Zenodo**.
+The comprehensive 100 -page technical architecture and research report for TruthLens is officially published and archived on **Zenodo**.
 
 * **Official DOI:** [10.5281/zenodo.19591334](https://doi.org/10.5281/zenodo.19591334)
 * **Permanent Link:** [https://doi.org/10.5281/zenodo.19591334](https://doi.org/10.5281/zenodo.19591334)
