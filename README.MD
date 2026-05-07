@@ -587,6 +587,5 @@ I have published a detailed article on LinkedIn Pulse that discusses the vision,
 
 ## 🤝 Commercial Inquiries & Collaboration
 
-While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
 
 While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
