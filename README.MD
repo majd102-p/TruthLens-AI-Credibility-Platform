@@ -622,7 +622,7 @@ Developed by **Majd Majdi Ayoub** – Computer Engineer & AI Enthusiast based in
 
 I have published a detailed article on LinkedIn Pulse that discusses the vision, challenges, and high-level strategy behind TruthLens.
 
-👉 **[Read the Full Article on LinkedIn](https://linkedin.com/in/majd--ayoub/)**
+👉 **[Read the Full Article on LinkedIn](https://www.linkedin.com/pulse/truthlens-ai-assisted-credibility-assessment-platform-majd-ayoub-psowf)**
 
 > **Note:** The source code is currently kept in a private repository for intellectual property protection. The full technical architecture, system design, and implementation methodology are detailed in the officially published Zenodo report.
 
