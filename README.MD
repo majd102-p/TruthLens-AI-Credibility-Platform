@@ -1,8 +1,5 @@
 # TruthLens: An AI-Assisted Credibility Assessment Platform
 
-<!-- CI/CD BADGE PLACEHOLDER: Update 'YourUsername' when pushing to GitHub -->
-[![CI/CD Pipeline](https://github.com/YourUsername/TruthLens/actions/workflows/ci.yml/badge.svg)](https://github.com/YourUsername/TruthLens/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19591334.svg)](https://doi.org/10.5281/zenodo.19591334)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)](https://fastapi.tiangolo.com)
