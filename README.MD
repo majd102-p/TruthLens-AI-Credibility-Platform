@@ -180,6 +180,14 @@ celery -A celery_worker worker --pool=solo -l info
 
 ---
 
+## 🔒 Data Privacy & Compliance (Zero-Data-Retention)
+TruthLens is built for environments where data sovereignty is paramount. By leveraging Local LLMs (Qwen/Phi-3) and on-premise Vector Databases (ChromaDB), the system ensures that sensitive inputs are **never** transmitted to third-party commercial AI providers (like OpenAI or Anthropic). This architectural decision makes TruthLens inherently compliant with strict data protection regulations such as **GDPR** and **HIPAA**.
+
+## 🛡️ Resilience & Fallback Strategy (Fault Tolerance)
+The platform is designed with Enterprise-grade resilience. The core/circuit_breaker.py implements a robust fallback mechanism for OSINT investigations:
+* If the primary Google FactCheck API rate-limits or fails, the system automatically falls back to DuckDuckGo Search (DDGS).
+* If external network connectivity is lost entirely, the system degrades gracefully, relying solely on the Local LLMs and the offline RAG Vector Database to evaluate credibility based on internal semantic logic.
+
 ## 📊 Detailed System Architecture (UML Diagrams)
 
 ### 1. System Context Diagram
@@ -194,9 +202,15 @@ flowchart TD
     F((Google Firestore))
     G((Sentry Monitoring))
     H((VirusTotal API))
+    I((Wikipedia API))
+    J((Blockchair API))
+    K((DuckDuckGo Search))
 
     A -->|Submits Text / URL / Image| B
     B -->|Returns Analysis Report| A
+    B -->|Entity Enrichment| I
+    B -->|Crypto Forensics| J
+    B -->|OSINT Fallback| K
     B -->|Verifies Claims| C
     B -->|Cross-references News| D
     B -->|Local AI Inference| E
@@ -215,11 +229,16 @@ flowchart TD
             A[FastAPI Uvicorn - Port 8000]
             W[Celery Worker]
             R[(Redis - Port 6379)]
+            V[(ChromaDB / FAISS)]
         end
         O[Ollama GPU Native - Port 11434]
     end
+    FS[(Google Firestore Cloud)]
 
     I((Internet)) -->|HTTPS| N
+    W -->|Semantic Search| V
+    A -->|Cloud Sync| FS
+    W -->|Save Results| FS
     N -->|Proxy Pass| A
     A -->|SSE Stream| N
     A -->|Publish Task| R
@@ -297,6 +316,7 @@ sequenceDiagram
     participant Firestore
     participant Redis
     participant Worker
+    participant VectorDB
     participant Ollama
     participant ExtAPIs
 
@@ -309,7 +329,9 @@ sequenceDiagram
 
     Worker->>Redis: Dequeue task
     Worker->>Worker: Extract text Scrape or OCR
-    Worker->>Ollama: run_mega_analysis Composite Prompt
+    Worker->>VectorDB: Query ChromaDB/FAISS Context
+    VectorDB-->>Worker: Retrieved Semantic Evidence
+    Worker->>Ollama: run_mega_analysis (Text + Context)
     Ollama-->>Worker: JSON 12 analysis fields
     Worker->>ExtAPIs: search_fact_check_db RSS and Google
     ExtAPIs-->>Worker: FactCheckResponse list
@@ -479,9 +501,11 @@ flowchart LR
         UC10([Export Open Data])
         UC11([Privacy Dashboard])
         UC12([Admin Tools])
+        UC13([Export PDF Report])
     end
 
     U --> UC1
+    U --> UC13
     U --> UC2
     U --> UC3
     U --> UC4
@@ -536,6 +560,11 @@ flowchart LR
     E --> C
 
     C --> F[FastText Language Detection]
+    
+    C --> NER[spaCy NER Extraction]
+    NER --> WIKI[Wikipedia API Enrichment]
+    WIKI --> G
+    
     F --> G[run_mega_analysis 12 fields]
 
     C --> H[search_fact_check_db]
