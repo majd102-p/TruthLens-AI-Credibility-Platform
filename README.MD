@@ -10,6 +10,9 @@
 [![Zenodo](https://img.shields.io/badge/Zenodo-Research%20Paper-blue?logo=zenodo)](https://doi.org/10.5281/zenodo.19591334)
 
 
+
+> ⭐ **If you find this project useful or interesting, please consider giving it a Star and Fork to support the research!** ⭐️
+
 <!-- UI SCREENSHOT/BANNER PLACEHOLDER: Uncomment and add the path to your UI screenshot here -->
 
 <!-- ![TruthLens Platform UI](./assets/images/ui_banner.png) -->
@@ -583,5 +586,7 @@ I have published a detailed article on LinkedIn Pulse that discusses the vision,
 > **Note:** The source code is currently kept in a private repository for intellectual property protection. The full technical architecture, system design, and implementation methodology are detailed in the officially published Zenodo report.
 
 ## 🤝 Commercial Inquiries & Collaboration
+
+While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
 
 While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
