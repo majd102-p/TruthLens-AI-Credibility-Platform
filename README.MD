@@ -113,6 +113,18 @@ TruthLens_Lab/
 
 ---
 
+## ⚙️ Prerequisites & System Requirements
+
+To run the full hybrid pipeline locally with AI inference, your system should meet the following requirements:
+
+*   **OS:** Linux (Ubuntu 20.04+) or Windows 11 (WSL2 recommended)
+*   **RAM:** Minimum 16GB (32GB recommended for high concurrency)
+*   **GPU:** NVIDIA GPU with at least 6GB VRAM (e.g., RTX 4050 or better) for local Qwen/Phi-3 execution. *(Can run on CPU-only, but processing will be significantly slower).*
+*   **Software:** Docker and Docker Compose (Option A) **OR** Python 3.10+ (Option B).
+*   **API Keys:** While TruthLens uses local LLMs, certain OSINT services (like VirusTotal or Google FactCheck) require standard free API keys. Copy .env.example to .env and fill them in.
+
+---
+
 ## 🚀 Quick Start (The Simplest Way)
 
 No local Python installation required. Just Docker.
@@ -586,6 +598,5 @@ I have published a detailed article on LinkedIn Pulse that discusses the vision,
 > **Note:** The source code is currently kept in a private repository for intellectual property protection. The full technical architecture, system design, and implementation methodology are detailed in the officially published Zenodo report.
 
 ## 🤝 Commercial Inquiries & Collaboration
-
 
 While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
