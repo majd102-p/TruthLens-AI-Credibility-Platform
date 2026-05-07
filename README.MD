@@ -11,13 +11,15 @@
 
 
 <!-- UI SCREENSHOT/BANNER PLACEHOLDER: Uncomment and add the path to your UI screenshot here -->
+
 <!-- ![TruthLens Platform UI](./assets/images/ui_banner.png) -->
 
 ## 📑 Table of Contents
+
 - [Overview](#-overview)
 - [Why TruthLens? (The Hybrid Approach)](#-why-truthlens-the-hybrid-approach)
-- [Official Publication & Citation](#-official-publication--citation)
-- [Intellectual Property & Copyright Notice](#%EF%B8%8F-intellectual-property--copyright-notice)
+- [Official Publication &amp; Citation](#-official-publication--citation)
+- [Intellectual Property &amp; Copyright Notice](#%EF%B8%8F-intellectual-property--copyright-notice)
 - [Key Technical Features](#-key-technical-features)
 - [System Architecture (High-Level)](#-system-architecture-high-level)
 - [Tech Stack](#-tech-stack)
@@ -25,64 +27,75 @@
 - [Quick Start (The Simplest Way)](#-quick-start-the-simplest-way)
 - [Analysis Modules](#%EF%B8%8F-analysis-modules)
 - [Detailed System Architecture (UML Diagrams)](#-detailed-system-architecture-uml-diagrams)
-- [Contact & Professional Network](#-contact--professional-network)
+- [Contact &amp; Professional Network](#-contact--professional-network)
 
 ---
 
 ## 🌟 Overview
+
 TruthLens is a high-performance, decision-support system engineered to combat the spread of misinformation. Unlike traditional fact-checking tools, TruthLens leverages a Hybrid Intelligence Architecture that combines Local Large Language Models (LLMs), classical machine learning, and Open-Source Intelligence (OSINT) streams to provide real-time credibility scores.
 
 ## 💡 Why TruthLens? (The Hybrid Approach)
+
 Standard LLMs often suffer from "hallucinations" and lack real-time context. TruthLens solves this by using a strictly constrained **Hybrid Pipeline**:
+
 1. **Local LLMs (Qwen 3 / Phi-3)** handle only linguistic parsing (detecting bias, toxicity, and logical fallacies).
 2. **OSINT integrations (Google FactCheck API, RSS Feeds, VirusTotal)** provide hard, verified external evidence.
-This ensures credibility scores are grounded in verifiable reality, not AI approximations.
+   This ensures credibility scores are grounded in verifiable reality, not AI approximations.
 
 ## 📚 Official Publication & Citation
+
 The comprehensive 100-page technical architecture and research report for TruthLens is officially published and archived on Zenodo.
 
-*   **Official DOI:** `10.5281/zenodo.19591334`
-*   **Permanent Link:** [https://doi.org/10.5281/zenodo.19591334](https://doi.org/10.5281/zenodo.19591334)
+* **Official DOI:** `10.5281/zenodo.19591334`
+* **Permanent Link:** [https://doi.org/10.5281/zenodo.19591334](https://doi.org/10.5281/zenodo.19591334)
 
 **Citation (APA):**
+
 > Ayoub, M. M. (2026). TruthLens: An AI-Assisted Credibility Assessment Platform (Technical Report). Zenodo. https://doi.org/10.5281/zenodo.19591334
 
 ## ⚖️ Intellectual Property & Copyright Notice
+
 **Copyright © 2026 Majd Majdi Ayoub. All Rights Reserved.**
 
-*   **Original Concept:** Majd Majdi Ayoub.
-*   **Technical Implementation:** 100% developed and architected by Majd Majdi Ayoub.
-*   **Documentation:** The technical report archived under DOI: 10.5281/zenodo.19591334 is the sole intellectual property of the author.
-*   **Note:** While this project was submitted as a formal graduation requirement for the Faculty of Engineering Technology at Al-Balqa Applied University, all technical assets (Code, Architecture, AI Orchestration) remain the author's intellectual property.
+* **Original Concept:** Majd Majdi Ayoub.
+* **Technical Implementation:** 100% developed and architected by Majd Majdi Ayoub.
+* **Documentation:** The technical report archived under DOI: 10.5281/zenodo.19591334 is the sole intellectual property of the author.
+* **Note:** While this project was submitted as a formal graduation requirement for the Faculty of Engineering Technology at Al-Balqa Applied University, all technical assets (Code, Architecture, AI Orchestration) remain the author's intellectual property.
 
 ## 🚀 Key Technical Features
-*   **Hybrid AI Orchestration:** Seamless integration of Qwen 3 (8B) and Phi-3 Mini for local, privacy-conscious reasoning and semantic validation.
-*   **Bilingual NLP & Sentiment Engine:** Advanced processing of both Arabic (including dialects) and English using CAMeL-BERT, FastText, TextBlob, and **spaCy** for Named Entity Recognition (NER).
-*   **Asynchronous & Real-Time Processing:** Built for high concurrency using FastAPI with Celery and Redis for background task management, delivering live analysis updates via **Server-Sent Events (SSE)**.
-*   **Advanced RAG & Vector Search:** Proprietary Knowledge Base backed by **ChromaDB** and **FAISS** for rapid similarity search and evidence retrieval.
-*   **Comprehensive OSINT & Forensics:** Real-time data fetching using DuckDuckGo Search (DDGS), Google FactCheck, Wikipedia API, and domain reputation analysis (WHOIS/IPWhois).
-*   **Multimodal Data Ingestion:** Supports text, URL scraping (via Newspaper3k & BeautifulSoup), and deep extraction from Images and PDFs using **Tesseract OCR** and **PDFPlumber**.
-*   **Scalable Infrastructure:** Fully containerized environment using Docker Compose with built-in **Sentry** for crash tracking and performance monitoring.
+
+* **Hybrid AI Orchestration:** Seamless integration of Qwen 3 (8B) and Phi-3 Mini for local, privacy-conscious reasoning and semantic validation.
+* **Bilingual NLP & Sentiment Engine:** Advanced processing of both Arabic (including dialects) and English using CAMeL-BERT, FastText, TextBlob, and **spaCy** for Named Entity Recognition (NER).
+* **Asynchronous & Real-Time Processing:** Built for high concurrency using FastAPI with Celery and Redis for background task management, delivering live analysis updates via **Server-Sent Events (SSE)**.
+* **Advanced RAG & Vector Search:** Proprietary Knowledge Base backed by **ChromaDB** and **FAISS** for rapid similarity search and evidence retrieval.
+* **Comprehensive OSINT & Forensics:** Real-time data fetching using DuckDuckGo Search (DDGS), Google FactCheck, Wikipedia API, and domain reputation analysis (WHOIS/IPWhois).
+* **Multimodal Data Ingestion:** Supports text, URL scraping (via Newspaper3k & BeautifulSoup), and deep extraction from Images and PDFs using **Tesseract OCR** and **PDFPlumber**.
+* **Scalable Infrastructure:** Fully containerized environment using Docker Compose with built-in **Sentry** for crash tracking and performance monitoring.
 
 ## 🏗 System Architecture (High-Level)
+
 The system is built on a 4-tier architectural model:
-1.  **Ingestion Layer:** Captures news articles and social media metadata.
-2.  **Analysis Layer:** Parallel processing through AI classifiers and LLMs.
-3.  **Validation Layer:** Cross-checking results with OSINT APIs.
-4.  **Presentation Layer:** A clean, data-driven dashboard for end-user insights.
+
+1. **Ingestion Layer:** Captures news articles and social media metadata.
+2. **Analysis Layer:** Parallel processing through AI classifiers and LLMs.
+3. **Validation Layer:** Cross-checking results with OSINT APIs.
+4. **Presentation Layer:** A clean, data-driven dashboard for end-user insights.
 
 ## 🛠 Tech Stack
-*   **Language:** Python 3.10+
-*   **AI/ML Models:** Transformers (HuggingFace), Qwen-8B, Phi-3, CAMeL-BERT, Scikit-learn, Skops, **spaCy**, **Detoxify** (Hate Speech).
-*   **Backend & Streaming:** FastAPI, Uvicorn, SSE-Starlette.
-*   **Task Queue & Cache:** Celery, Redis.
-*   **Vector DB & RAG:** ChromaDB, FAISS, Sentence-Transformers.
-*   **OSINT & Scraping:** Newspaper3k, BeautifulSoup4, DuckDuckGo Search, Python-Whois.
-*   **Document Processing:** Pytesseract (OCR), PDFPlumber, ReportLab (PDF Gen).
-*   **DevOps & Monitoring:** Docker, Docker Compose, `uv` package manager, Sentry-SDK.
-*   **Database:** Google Firebase / Firestore.
+
+* **Language:** Python 3.10+
+* **AI/ML Models:** Transformers (HuggingFace), Qwen-8B, Phi-3, CAMeL-BERT, Scikit-learn, Skops, **spaCy**, **Detoxify** (Hate Speech).
+* **Backend & Streaming:** FastAPI, Uvicorn, SSE-Starlette.
+* **Task Queue & Cache:** Celery, Redis.
+* **Vector DB & RAG:** ChromaDB, FAISS, Sentence-Transformers.
+* **OSINT & Scraping:** Newspaper3k, BeautifulSoup4, DuckDuckGo Search, Python-Whois.
+* **Document Processing:** Pytesseract (OCR), PDFPlumber, ReportLab (PDF Gen).
+* **DevOps & Monitoring:** Docker, Docker Compose, `uv` package manager, Sentry-SDK.
+* **Database:** Google Firebase / Firestore.
 
 ## 📂 Project Structure
+
 ```text
 TruthLens_Lab/
 ├── core/              # Singleton Managers, Configs, Circuit Breaker
@@ -102,21 +115,24 @@ TruthLens_Lab/
 No local Python installation required. Just Docker.
 
 1. **Start the System**:
-    ```bash
-    docker-compose up -d --build
-    ```
-    *(First run may take 5-10 minutes to download AI models)*
 
+   ```bash
+   docker-compose up -d --build
+   ```
+
+   *(First run may take 5-10 minutes to download AI models)*
 2. **Access the Lab**:
-    * **Frontend**: [http://localhost:8000](http://localhost:8000)
-    * **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
+   * **Frontend**: [http://localhost:8000](http://localhost:8000)
+   * **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 3. **Stop**:
-    ```bash
-    docker-compose down
-    ```
+
+   ```bash
+   docker-compose down
+   ```
 
 ### Option B: Local Python Development
+
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -132,6 +148,7 @@ celery -A celery_worker worker --pool=solo -l info
 ```
 
 ## 🛡️ Analysis Modules
+
 - **Analysis Report (Analysis Engine)**: Comprehensive report generation including:
   * **Claim Verification**: Detecting and verifying key claims.
   * **Fallacy Detection**: Identifying logical fallacies.
@@ -151,6 +168,7 @@ celery -A celery_worker worker --pool=solo -l info
 ## 📊 Detailed System Architecture (UML Diagrams)
 
 ### 1. System Context Diagram
+
 ```mermaid
 flowchart TD
     A((End User))
@@ -173,6 +191,7 @@ flowchart TD
 ```
 
 ### 2. Deployment Diagram
+
 ```mermaid
 flowchart TD
     subgraph Host [Host Machine - RTX 4050 GPU]
@@ -197,6 +216,7 @@ flowchart TD
 ```
 
 ### 3. Component Diagram
+
 ```mermaid
 flowchart TD
     subgraph Entry [Entry Points]
@@ -254,6 +274,7 @@ flowchart TD
 ```
 
 ### 4. Sequence Diagram
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -288,6 +309,7 @@ sequenceDiagram
 ```
 
 ### 5. Class Diagram
+
 ```mermaid
 classDiagram
     class TextAnalysisRequest {
@@ -380,6 +402,7 @@ classDiagram
 ```
 
 ### 6. Activity Diagram - Scoring Algorithm
+
 ```mermaid
 flowchart TD
     A([Start Scoring]) --> B[score = 50 + trust_boost]
@@ -422,6 +445,7 @@ flowchart TD
 ```
 
 ### 7. Use Case Diagram
+
 ```mermaid
 flowchart LR
     U((User))
@@ -462,6 +486,7 @@ flowchart LR
 ```
 
 ### 8. State Machine - Task Lifecycle
+
 ```mermaid
 stateDiagram-v2
     [*] --> queued : POST /analyze received
@@ -484,6 +509,7 @@ stateDiagram-v2
 ```
 
 ### 9. Data Flow Diagram
+
 ```mermaid
 flowchart LR
     A[Raw Input] --> B{Input Type?}
@@ -513,6 +539,7 @@ flowchart LR
 ```
 
 ### 10. Package Diagram - Repository Structure
+
 ```mermaid
 flowchart TD
     subgraph Repo [TruthLens Repository]
@@ -541,12 +568,14 @@ flowchart TD
 ---
 
 ## 📫 Contact & Professional Network
+
 Developed by **Majd Majdi Ayoub** – Computer Engineer & AI Enthusiast based in San Bruno, California.
 
-*   **LinkedIn:** [linkedin.com/in/majd--ayoub/](https://linkedin.com/in/majd--ayoub/)
-*   **Portfolio:** Available upon request.
+* **LinkedIn:** [linkedin.com/in/majd--ayoub/](https://linkedin.com/in/majd--ayoub/)
+* **Portfolio:** Available upon request.
 
 ## 📝 Featured Article
+
 I have published a detailed article on LinkedIn Pulse that discusses the vision, challenges, and high-level strategy behind TruthLens.
 
 👉 **[Read the Full Article on LinkedIn](https://linkedin.com/in/majd--ayoub/)**
@@ -554,4 +583,5 @@ I have published a detailed article on LinkedIn Pulse that discusses the vision,
 > **Note:** The source code is currently kept in a private repository for intellectual property protection. The full technical architecture, system design, and implementation methodology are detailed in the officially published Zenodo report.
 
 ## 🤝 Commercial Inquiries & Collaboration
+
 While this project is licensed under GPLv3, I am open to professional collaborations, commercial partnerships, and consulting opportunities. For inquiries regarding custom implementations or use cases beyond the scope of the current license, please contact me directly via LinkedIn.
