@@ -615,7 +615,7 @@ flowchart TD
 
 Developed by **Majd Majdi Ayoub** – Computer Engineer & AI Enthusiast based in San Bruno, California.
 
-* **LinkedIn:** [linkedin.com/in/majd--ayoub/](https://linkedin.com/in/majd--ayoub/)
+* **LinkedIn:** [linkedin.com/in/majd--ayoub/]**(https://www.linkedin.com/in/majd--ayoub/)**
 * **Portfolio:** Available upon request.
 
 ## 📝 Featured Article
